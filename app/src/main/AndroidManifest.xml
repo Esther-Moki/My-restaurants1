@@ -2,25 +2,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.moringaschool.myrestaurants">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="MyRestaurants"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-         android:theme="@style/AppTheme">
+        android:theme="@style/Theme.MyRestaurants">
+
         <activity
-            android:name=".RestaurantsActivity">
+            android:name=".ui.RestaurantDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.RestaurantListActivity"
+            android:exported="true">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.moringaschool.myrestaurants.MainActivity">
+                android:value="com.moringaschool.myrestaurants.ui.MainActivity">
             </meta-data>
-            android:exported="true" />
         </activity>
+
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/NoActionBarTheme"
-            android:exported="true">
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:theme="@style/NoActionBarTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
